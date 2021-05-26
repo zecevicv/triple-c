@@ -3,52 +3,168 @@
 const headerMenu = document.querySelector('.header-menu');
 const hamburgerBtn = document.querySelector('.header .hamburger');
 const body = document.querySelector('body');
-const headerLinks = document.querySelector('.header-links');
 
 if (hamburgerBtn) {
   hamburgerBtn.addEventListener('click', (e) => {
     hamburgerBtn.classList.toggle('is-active');
     headerMenu.classList.toggle('show-menu');
     body.classList.toggle('no-scroll');
+
+    if (headerMenu.classList.contains('show-menu')) {
+      gsap.to(headerMenu, {
+        height: 'calc(100vh - 21.3vw + 1px)',
+        duration: .5,
+        ease: 'power1.inOut'
+      });
+    } else {
+      gsap.to(headerMenu, {
+        height: '0'
+      });
+    }
   });
 }
-
-/* #Hamburger Menu Level 2
-  ======================================================= */
-const headerDropdownTogglers2 = document.querySelectorAll('.header-dropdown-toggler-2');
-
-headerDropdownTogglers2.forEach((toggler) => {
-  toggler.addEventListener('click', (e) => {
-    e.target.closest('ul').classList.toggle('show');
-  });
-});
 
 /* #Mega Menu
   ======================================================= */
 const headerDropdownTogglers = document.querySelectorAll('.header-dropdown-toggler');
+const headerBottom = document.querySelector('.header-bottom');
 
-headerDropdownTogglers.forEach((toggler1, index1) => {
-  toggler1.addEventListener('click', (e) => {
-    headerDropdownTogglers.forEach((toggler2, index2) => {
-      if (index1 != index2) {
-        toggler2.closest('li').classList.remove('show');
+// Mobile
+if (window.innerWidth < 1024) {
+  headerDropdownTogglers.forEach((toggler) => {
+    toggler.addEventListener('click', (e) => {
+      const li = toggler.closest('li');
+      const dropdown = li.querySelector('.header-dropdown');
+  
+      if (document.querySelector('.header li.show') && document.querySelector('.header li.show') != li) {
+        const li2 = document.querySelector('.header li.show');
+        const dropdown2 = li2.querySelector('.header-dropdown');
+  
+        li2.classList.remove('show');
+        gsap.to(dropdown2, {
+          height: '0'
+        });
+      } 
+
+      if (!li.classList.contains('show')) {
+        li.classList.add('show');
+        gsap.to(dropdown, {
+          height: 'auto',
+          duration: .5,
+          ease: 'power1.inOut'
+        });
+      } else {
+        li.classList.remove('show');
+        gsap.to(dropdown, {
+          height: '0'
+        });
+      }
+    }); 
+  });
+} 
+// Desktop
+else {
+  headerDropdownTogglers.forEach((toggler) => {
+    toggler.addEventListener('mouseover', (e) => {
+      const li = toggler.closest('li');
+      const dropdown = li.querySelector('.header-dropdown');
+  
+      if (document.querySelector('.header li.show') && document.querySelector('.header li.show') != li) {
+        const li2 = document.querySelector('.header li.show');
+        const dropdown2 = li2.querySelector('.header-dropdown');
+  
+        li2.classList.remove('show');
+        gsap.to(dropdown2, {
+          height: '0'
+        });
+      }
+  
+      li.classList.add('show');
+      gsap.to(dropdown, {
+        height: 'auto',
+        duration: .5,
+        ease: 'power1.inOut'
+      });
+  
+    }); 
+  });
+  
+  headerBottom.addEventListener('mouseleave', (e) => {
+    headerDropdownTogglers.forEach((toggler) => {
+      const li = toggler.closest('li');
+      const dropdown = li.querySelector('.header-dropdown');
+  
+      li.classList.remove('show');
+      gsap.to(dropdown, {
+        height: '0'
+      });
+    });
+  });
+}
+
+
+
+
+
+// Close menu on outside click
+// document.addEventListener('click', (e) => {
+//   if (!e.target.closest('.header-dropdown-toggler') && !e.target.closest('.header-dropdown') && document.querySelector('.header li.show')) {
+//     headerLinkList.forEach((l) => {
+//       if (l.classList.contains('show')) {
+//         let d = l.querySelector('.header-dropdown');
+
+//         l.classList.remove('show');
+//         gsap.to(d, {
+//           height: '0'
+//         });
+//       }
+//     });
+//   }
+// });
+
+/* #Accordion
+================================================== */
+const accordions = document.querySelectorAll('.accordion');
+
+if (accordions) {
+  accordions.forEach((accordion) => {
+    const collapsibles = accordion.querySelectorAll('.collapsible');
+
+    accordion.addEventListener('click', (e) => {
+      if (e.target.closest('.collapse-toggler')) {
+        e.preventDefault();
+    
+        const collapsible = e.target.closest('.collapsible');
+        const collapse = collapsible.querySelector('.collapse');
+    
+        collapsibles.forEach((coll) => {
+          if (coll.classList.contains('show') && coll != collapsible) {
+            collCollapse = coll.querySelector('.collapse');
+    
+            coll.classList.remove('show');
+            gsap.to(collCollapse, {
+              height: '0'
+            });
+          }
+        });
+    
+        collapsible.classList.toggle('show');
+    
+        if (collapsible.classList.contains('show')) {
+          gsap.to(collapse, {
+            height: 'auto',
+            duration: .4,
+            ease: 'power1.inOut'
+          });
+        } else {
+          gsap.to(collapse, {
+            height: '0'
+          });
+        }
       }
     });
-    e.target.closest('li').classList.toggle('show');
-  });
-});
-
-/* #Footer Collapse
-  ======================================================= */
-const footerCollapsibles = document.querySelectorAll('.footer .collapsible');
-
-footerCollapsibles.forEach((collapsible) => {
-  collapsible.addEventListener('click', (e) => {
-    if (e.target.closest('.collapse-toggler')) {
-      collapsible.classList.toggle('show');
-    }
-  });
-});
+  })
+}
 
 /* #Sliders
   ======================================================= */
@@ -57,7 +173,6 @@ window.addEventListener('load', () => {
   ======================================================= */
   if (document.querySelector('.banner-slider .swiper-container')) {
     new Swiper('.banner-slider .swiper-container', {
-      effect: 'fade',
       loop: true,
       pagination: {
         el: '.banner-slider .swiper-pagination',
