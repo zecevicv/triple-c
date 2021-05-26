@@ -152,6 +152,7 @@ if (document.querySelector('.banner-video')) {
   if (window.innerWidth < 1024) {
     $('.banner-video .video-wrapper').parallaxTilt({
       parallaxMultiple: 0.5,
+      tiltMultiple: 0.5
     });
   } else {
     $('.banner-video .video').parallaxTilt({
