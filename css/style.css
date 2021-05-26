@@ -1214,7 +1214,7 @@ h6 {
   height: 0;
 }
 
-/* #Banner / Banner Slider
+/* #Banner / Banner Slider / Banner Video
 ================================================== */
 .banner {
   position: relative;
@@ -1366,6 +1366,48 @@ h6 {
   width: 100%;
 }
 
+/* Video */
+.banner-video {
+  overflow: hidden;
+}
+
+.banner-video .video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 20;
+}
+
+.banner-video .video .video-wrapper {
+  width: 48%;
+  position: absolute;
+  top: 50%;
+  left: 35%;
+  transform: translate(-50%, -50%);
+}
+
+.banner-video .text {
+  z-index: 30;
+}
+
+.banner-video .video a {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 5.2vw;
+}
+
+.banner-video .video video {
+  width: 100%;
+}
+
+.banner-video .banner-social {
+  z-index: 30;
+}
+
 @media (max-width: 1023.98px) {
   .banner .container {
     height: 90%;
@@ -1440,6 +1482,19 @@ h6 {
   /* Overlay */
   .banner-overlay {
     width: 68%;
+  }
+
+  /* Video */
+  .banner-video .video .video-wrapper {
+    width: 80%;
+    top: 54%;
+    left: auto;
+    right: 5%;
+    transform: translate(0, 0);
+  }
+
+  .banner-video .video a {
+    width: 13.3vw;
   }
 }
 

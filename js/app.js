@@ -102,26 +102,6 @@ else {
   });
 }
 
-
-
-
-
-// Close menu on outside click
-// document.addEventListener('click', (e) => {
-//   if (!e.target.closest('.header-dropdown-toggler') && !e.target.closest('.header-dropdown') && document.querySelector('.header li.show')) {
-//     headerLinkList.forEach((l) => {
-//       if (l.classList.contains('show')) {
-//         let d = l.querySelector('.header-dropdown');
-
-//         l.classList.remove('show');
-//         gsap.to(d, {
-//           height: '0'
-//         });
-//       }
-//     });
-//   }
-// });
-
 /* #Accordion
 ================================================== */
 const accordions = document.querySelectorAll('.accordion');
@@ -166,6 +146,16 @@ if (accordions) {
   })
 }
 
+/* #Banner Video Tilt
+================================================== */
+if (document.querySelector('.banner-video')) {
+  $('.banner-video .video').parallaxTilt({
+    parallaxMultiple: 0.05,
+    tiltMultiple: 0.015,
+    duration: 10000,
+  });
+}
+  
 /* #Sliders
   ======================================================= */
 window.addEventListener('load', () => {

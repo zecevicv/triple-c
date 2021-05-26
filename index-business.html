@@ -438,7 +438,7 @@
   </div>
 
   <!-- Banner -->
-  <div class="banner">
+  <div class="banner banner-video">
     <!-- Text -->
     <div class="container">
       <div class="text">
@@ -449,22 +449,21 @@
         </h1>
         <p class="f-d-6 f-m-4">.הגיע הזמן לעבור לאינטרנט של ווינרים
           <br>.מהירות מצוינת, יציבות בכל שלב ביום</p>
-          <a href="#" class="btn btn-primary btn-lg">
-            <span>
-              התקדמו אלינו
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23.414 24">
-                <g id="bag-edit" transform="translate(1 1)">
-                  <path id="Shape" d="M15,17H0V0H18" transform="translate(0 5)" fill="none" stroke="#fff"
-                    stroke-linecap="square" stroke-miterlimit="10" stroke-width="2" />
-                  <path id="Shape-2" data-name="Shape" d="M0,8V4A4,4,0,0,1,4,0H4A4,4,0,0,1,8,4V8"
-                    transform="translate(5)" fill="none" stroke="#fff" stroke-linecap="square" stroke-miterlimit="10"
-                    stroke-width="2" />
-                  <path id="Shape-3" data-name="Shape" d="M3,9H0V6L6,0,9,3Z" transform="translate(12 9)" fill="none"
-                    stroke="#fff" stroke-linecap="square" stroke-miterlimit="10" stroke-width="2" />
-                </g>
-              </svg>
-            </span>
-          </a>
+        <a href="#" class="btn btn-primary btn-lg">
+          <span>
+            התקדמו אלינו
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23.414 24">
+              <g id="bag-edit" transform="translate(1 1)">
+                <path id="Shape" d="M15,17H0V0H18" transform="translate(0 5)" fill="none" stroke="#fff"
+                  stroke-linecap="square" stroke-miterlimit="10" stroke-width="2" />
+                <path id="Shape-2" data-name="Shape" d="M0,8V4A4,4,0,0,1,4,0H4A4,4,0,0,1,8,4V8" transform="translate(5)"
+                  fill="none" stroke="#fff" stroke-linecap="square" stroke-miterlimit="10" stroke-width="2" />
+                <path id="Shape-3" data-name="Shape" d="M3,9H0V6L6,0,9,3Z" transform="translate(12 9)" fill="none"
+                  stroke="#fff" stroke-linecap="square" stroke-miterlimit="10" stroke-width="2" />
+              </g>
+            </svg>
+          </span>
+        </a>
         <div class="banner-scroll">
           <div class="img">
             <img src="img/icons/mouse-line.svg" alt="mouse-icon">
@@ -482,6 +481,15 @@
         <source media="(min-width:1024px)" srcset="img/home-business/banner.jpg">
         <img src="img/home-business/banner-mobile.jpg" alt="banner-img">
       </picture>
+    </div>
+    <!-- Video -->
+    <div class="video">
+      <div class="video-wrapper">
+        <video src="https://portfolio.elevate.co.il/wp-content/uploads/2020/06/video.mp4" type="video/mp4" frameborder="0" loop autoplay muted playsinline></video>
+        <a href="#">
+          <img src="img/icons/play-icon.svg" alt="play-icon">
+        </a>
+      </div>
     </div>
     <!-- Social -->
     <div class="banner-social">
@@ -675,7 +683,9 @@
         <h2 class="f-d-9 f-m-5 regular">
           שירותי מומחה
         </h2>
-        <p class="f-d-3 f-m-2">טריפל סי מספקת שירותי מומחה במגוון תחומים ומוצרים, ביניהם מערכות מחשוב מסוגים שונים, מערכות אחסון וגיבוי, ציוד תקשורת, מוצרי אבטחת מידע, מערכות הפעלה שונות, תוכנות Middleware שונות, Hypervisors ממספר סוגים ויצרנים שונים ואף טיפול ותמיכה בתחנות קצה.
+        <p class="f-d-3 f-m-2">טריפל סי מספקת שירותי מומחה במגוון תחומים ומוצרים, ביניהם מערכות מחשוב מסוגים שונים,
+          מערכות אחסון וגיבוי, ציוד תקשורת, מוצרי אבטחת מידע, מערכות הפעלה שונות, תוכנות Middleware שונות, Hypervisors
+          ממספר סוגים ויצרנים שונים ואף טיפול ותמיכה בתחנות קצה.
         </p>
         <ul>
           <!-- Item -->
@@ -1346,6 +1356,10 @@
   <!-- Script (Vendor) -->
   <script src="js/swiper-bundle.min.js"></script>
   <script src="js/gsap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+  </script>
+  <script src="js/parallaxTilt.min.js"></script>
 
   <!-- Script -->
   <script src="js/app.js"></script>
