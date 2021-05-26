@@ -149,11 +149,17 @@ if (accordions) {
 /* #Banner Video Tilt
 ================================================== */
 if (document.querySelector('.banner-video')) {
-  $('.banner-video .video').parallaxTilt({
-    parallaxMultiple: 0.05,
-    tiltMultiple: 0.015,
-    duration: 10000,
-  });
+  if (window.innerWidth < 1024) {
+    $('.banner-video .video-wrapper').parallaxTilt({
+      parallaxMultiple: 0.2,
+    });
+  } else {
+    $('.banner-video .video').parallaxTilt({
+      parallaxMultiple: 0.05,
+      tiltMultiple: 0.015,
+      duration: 10000,
+    });
+  }
 }
   
 /* #Sliders
