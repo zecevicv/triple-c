@@ -477,6 +477,7 @@ h6 {
 .header-top {
   padding: .5vw 0;
   border-bottom: 1px solid #DEDEDE;
+  background-color: white;
 }
 
 .header-top .container {
@@ -511,6 +512,7 @@ h6 {
 /* Bottom */
 .header-bottom {
   padding: 0.78vw 0;
+  background-color: white;
 }
 
 .header-bottom .container {
@@ -604,16 +606,17 @@ h6 {
   left: 0;
   bottom: 2px;
   width: 100%;
-  transform: translateY(100%);
   
   box-shadow: inset 0px 23px 26px -12px rgba(0, 0, 0, 0.16);
   color: #0E65F3;
   background-color: white;
-
-  height: 0;
   overflow: hidden;
-
+  
   backface-visibility: hidden;
+  z-index: -1;
+  
+  transform: translateY(0);
+  opacity: 0;
 }
 
 .header-dropdown > div {
@@ -765,6 +768,8 @@ h6 {
     position: static;
     transform: none;
     box-shadow: none;
+    height: 0;
+    opacity: 1;
   }
 
   .header-dropdown > div {

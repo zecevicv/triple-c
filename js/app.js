@@ -75,15 +75,16 @@ else {
   
         li2.classList.remove('show');
         gsap.to(dropdown2, {
-          height: '0'
+          y: 0,
+          opacity: 0
         });
       }
   
       li.classList.add('show');
       gsap.to(dropdown, {
-        height: 'auto',
-        duration: .5,
-        ease: 'power1.inOut'
+        y: "100%",
+        duration: .4,
+        opacity: 1
       });
   
     }); 
@@ -96,7 +97,8 @@ else {
   
       li.classList.remove('show');
       gsap.to(dropdown, {
-        height: '0'
+        y: 0,
+        opacity: 0
       });
     });
   });
