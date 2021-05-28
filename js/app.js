@@ -208,6 +208,49 @@ window.addEventListener('load', () => {
     });
   }
 
+  /* #Services Slider
+  ======================================================= */
+  if (document.querySelector('.services-slider .swiper-container')) {
+    new Swiper('.services-slider .swiper-container', {
+      loop: true,
+      slidesPerView: 5,
+      centeredSlides: true,
+      pagination: {
+        el: '.services-slider .swiper-pagination'
+      },
+      breakpoints: {
+        0: {
+          slidesPerView: 1.25
+        },
+        1023: {
+          slidesPerView: 5
+        }
+      }
+    });
+  }
+
+  /* #Reviews Slider
+  ======================================================= */
+  if (document.querySelector('.reviews .swiper-container')) {
+    new Swiper('.reviews .swiper-container', {
+      loop: true,
+      slidesPerView: 3,
+      centeredSlides: true,
+      navigation: {
+        nextEl: '.reviews .swiper-button-next',
+        prevEl: '.reviews .swiper-button-prev',
+      },
+      breakpoints: {
+        0: {
+          slidesPerView: 1.2
+        },
+        1023: {
+          slidesPerView: 3
+        }
+      }
+    });
+  }
+
   /* #Blog Posts Slider
   ======================================================= */
   if (document.querySelector('.blog-posts .swiper-container')) {
