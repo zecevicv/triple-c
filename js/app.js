@@ -119,16 +119,18 @@ if (accordions) {
         const collapsible = e.target.closest('.collapsible');
         const collapse = collapsible.querySelector('.collapse');
     
-        collapsibles.forEach((coll) => {
-          if (coll.classList.contains('show') && coll != collapsible) {
-            collCollapse = coll.querySelector('.collapse');
-    
-            coll.classList.remove('show');
-            gsap.to(collCollapse, {
-              height: '0'
-            });
-          }
-        });
+        if (!accordion.classList.contains('no-close')) {
+          collapsibles.forEach((coll) => {
+            if (coll.classList.contains('show') && coll != collapsible) {
+              collCollapse = coll.querySelector('.collapse');
+      
+              coll.classList.remove('show');
+              gsap.to(collCollapse, {
+                height: '0'
+              });
+            }
+          });
+        }
     
         collapsible.classList.toggle('show');
     
