@@ -186,25 +186,29 @@ window.addEventListener('load', () => {
 
   /* #Help Slider
   ======================================================= */
-  if (document.querySelector('.help-slider .swiper-container')) {
-    new Swiper('.help-slider .swiper-container', {
-      loop: true,
-      slidesPerView: 5,
-      centeredSlides: true,
-      navigation: {
-        nextEl: '.help-slider .swiper-button-next',
-        prevEl: '.help-slider .swiper-button-prev',
-      },
-      breakpoints: {
-        0: {
-          slidesPerView: 2.6,
-          centeredSlides: false,
+  const helpSliders = document.querySelectorAll('.help-slider .swiper-container');
+
+  if (helpSliders) {
+    helpSliders.forEach((slider) => {
+      new Swiper(slider, {
+        loop: true,
+        slidesPerView: 5,
+        centeredSlides: true,
+        navigation: {
+          nextEl: slider.closest('.help-slider').querySelector('.swiper-button-next'),
+          prevEl: slider.closest('.help-slider').querySelector('.swiper-button-prev')
         },
-        1023: {
-          slidesPerView: 5,
-          centeredSlides: true,
+        breakpoints: {
+          0: {
+            slidesPerView: 2.6,
+            centeredSlides: false,
+          },
+          1023: {
+            slidesPerView: 5,
+            centeredSlides: true,
+          }
         }
-      }
+      });
     });
   }
 

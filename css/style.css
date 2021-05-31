@@ -253,6 +253,14 @@ button {
   color: #0E65F3 !important;
 }
 
+.text-gray {
+  color: #5B6B82 !important;
+}
+
+.text-left {
+  text-align: left!important;
+}
+
 h1,
 h2,
 h3,
@@ -277,6 +285,7 @@ h6 {
   overflow: hidden;
   transition: all 0.3s cubic-bezier(0.7, 0, 0.2, 1);
   border: 1px solid transparent;
+  cursor: pointer;
 }
 
 .btn span {
@@ -340,11 +349,13 @@ h6 {
   z-index: 1;
 }
 
-.btn-secondary:hover {
+.btn-secondary:hover,
+.btn-secondary.active {
   color: white;
 }
 
-.btn-secondary:hover::before {
+.btn-secondary:hover::before,
+.btn-secondary.active::before {
   transform: translate3d(0,-100%,0);
 }
 
@@ -357,6 +368,11 @@ h6 {
 .btn-tertiary {
   background-color: white;
   color: #0E65F3;
+}
+
+.btn-tertiary.active {
+  background-color: #0E65F3;
+  color: white;
 }
 
 .btn img,
@@ -374,6 +390,10 @@ h6 {
 
 .btn.btn-lg {
   font-size: 1.45vw;
+}
+
+.btn.shadow {
+  box-shadow: 0 6px 35px rgba(0, 0, 0, 0.16);
 }
 
 .link {
@@ -1619,6 +1639,10 @@ h6 {
   overflow: hidden;
 }
 
+.help-slider.alt {
+  background-color: #F1F6F9;
+}
+
 .help-slider .text {
   flex: 0 0 28%;
 }
@@ -1677,6 +1701,10 @@ h6 {
 
 .help-slider .swiper-slide.swiper-slide-active>div::after {
   opacity: .4;
+}
+
+.help-slider.no-shadow .swiper-slide>div::after {
+  display: none!important;
 }
 
 .help-slider .swiper-slide img {
@@ -3129,6 +3157,34 @@ h6 {
   text-align: center;
 }
 
+.faqs h3 {
+  line-height: 1;
+  margin-bottom: 2vw;
+}
+
+.faqs-navigation {
+  margin: 2.2vw -.5vw 3vw -.5vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.faqs-navigation li {
+  margin: .5vw;
+}
+
+.faqs-navigation .btn {
+  min-width: 0;
+}
+
+.faqs-navigation .btn-tertiary {
+  color: #242424;
+}
+
+.faqs-navigation .btn-tertiary.active {
+  color: white;
+}
+
 .faqs .collapsible {
   box-shadow: 0 3px 24px rgba(0, 0, 0, .06);
   border-radius: 1vw;
@@ -3192,6 +3248,22 @@ h6 {
   
   .faqs h2 {
     margin-bottom: 6.66vw;
+  }
+
+  .faqs h3 {
+    margin-bottom: 5vw;
+  }
+  
+  .faqs-navigation {
+    margin: 5vw -1.66vw 6vw -1.66vw;
+  }
+  
+  .faqs-navigation li {
+    margin: 1.66vw;
+  }
+  
+  .faqs-navigation .btn {
+    font-size: 3.86vw;
   }
   
   .faqs .collapsible {
@@ -3660,7 +3732,7 @@ h6 {
   }
 }
 
-/* #Reviews Slider
+/* #Reviews
 ================================================== */
 .reviews {
   overflow: hidden;
@@ -3763,5 +3835,135 @@ h6 {
 
   .reviews .swiper-button-next {
     margin-left: 5.3vw;
+  }
+}
+
+/* #Locations
+================================================== */
+.locations {
+  margin: 4.7vw 0 7vw 0;
+}
+
+.locations .container {
+  max-width: 82%;
+}
+
+.locations .container > h2,
+.locations .container > p {
+  text-align: center;
+  line-height: 1;
+}
+
+.location-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 3vw -1.5vw 0 -1.5vw;
+}
+
+.location-item {
+  flex: 0 0 50%;
+  padding: 1.5vw;
+}
+
+.location-item > div {
+  border-radius: 1vw;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, .2);
+  padding: 2vw 1.6vw;
+}
+
+.location-item h3 {
+  line-height: 1;
+  margin-bottom: 1.3vw;
+}
+
+.location-item ul {
+  border-top: 1px solid rgba(14, 101, 243, 0.2);
+  border-bottom: 1px solid rgba(14, 101, 243, 0.2);
+  display: flex;
+  padding: .75vw 0;
+  margin: .5vw 0;
+}
+
+.location-item ul > *:not(:last-child) {
+  margin-left: 1.8vw;
+}
+
+.location-item p {
+  display: flex;
+}
+
+.location-item p img {
+  flex: 0 0 1vw;
+  width: 1vw;
+  height: 1vw;
+  margin-left: .8vw;
+  object-fit: contain;
+  object-position: center;
+  margin-top: .2vw;
+}
+
+@media (max-width: 1023.98px) {
+  .locations {
+    margin: 10vw 0 18vw 0;
+  }
+
+  .locations .container {
+    max-width: 90%;
+  }
+
+  .location-list {
+    margin: 11vw 0 0 0;
+    display: block;
+  }
+
+  .location-item {
+    padding: 0;
+  }
+
+  .location-item:not(:last-child) {
+    margin-bottom: 8vw;
+  }
+
+  .location-item > div {
+    border-radius: 2.66vw;
+    padding: 6vw 4.6vw 8vw 4.6vw;
+  }
+
+  .location-item h3 {
+    margin-bottom: 4.66vw;
+  }
+
+  .location-item ul {
+    border-top: none;
+    border-bottom: none;
+    display: block;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .location-item ul > *:not(:last-child) {
+    margin-left: 0;
+  }
+
+  .location-item p img {
+    flex: 0 0 4.66vw;
+    width: 4.66vw;
+    height: 4.66vw;
+    margin-left: 6vw;
+    margin-top: .2vw;
+  }
+
+  .location-item p {
+    border-top: 1px solid rgba(14, 101, 243, 0.2);
+    padding: 5.33vw 0;
+  }
+
+  .location-item > div > p:first-of-type {
+    border-top: none;
+    padding-top: 0;
+  }
+
+  .location-item .btn {
+    margin-top: 6vw;
   }
 }
