@@ -279,6 +279,30 @@ window.addEventListener('load', () => {
     });
   }
 
+  /* #Team Slider
+  ======================================================= */
+  if (document.querySelector('.team .swiper-container')) {
+    new Swiper('.team .swiper-container', {
+      pagination: {
+        el: ".team .swiper-pagination",
+      },
+      slidesPerColumnFill: 'row',
+      direction: 'horizontal',
+      breakpoints: {
+        0: {
+          slidesPerView: 2,
+          slidesPerColumn: 2,
+          allowTouchMove: true,
+        },
+        1023: {
+          slidesPerView: 4,
+          slidesPerColumn: 2,
+          allowTouchMove: false,
+        }
+      }
+    });
+  }
+
   /* #Packages Slider
   ======================================================= */
   let initialSlide = 0;
