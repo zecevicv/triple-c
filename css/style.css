@@ -3248,6 +3248,11 @@ h6 {
   margin: .5vw;
 }
 
+.faqs-navigation li.active .btn {
+  background-color: #0E65F3;
+  color: white;
+}
+
 .faqs-navigation .btn {
   min-width: 0;
 }
@@ -3258,6 +3263,14 @@ h6 {
 
 .faqs-navigation .btn-tertiary.active {
   color: white;
+}
+
+.faqs-tabs > li {
+  display: none;
+}
+
+.faqs-tabs > li.active {
+  display: block;
 }
 
 .faqs .collapsible {

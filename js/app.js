@@ -166,6 +166,39 @@ if (document.querySelector('.banner-video')) {
     });
   }
 }
+
+/* #FAQs
+  ======================================================= */
+const faqs = document.querySelector('.faqs');
+
+if (faqs) {
+  const navBtns = faqs.querySelectorAll('.faqs-navigation li');
+  const tabs = faqs.querySelectorAll('.faqs-tabs li');
+
+  if (navBtns && tabs) {
+    navBtns.forEach((btn, index) => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+  
+        navBtns.forEach((btn2) => {
+          if (btn === btn2) {
+            btn2.classList.add('active');
+          } else {
+            btn2.classList.remove('active');
+          }
+        });
+  
+        tabs.forEach((tab, index2) => {
+          if (index == index2) {
+            tab.classList.add('active');
+          } else {
+            tab.classList.remove('active');
+          }
+        });
+      });
+    });
+  }
+}
   
 /* #Sliders
   ======================================================= */
