@@ -4636,3 +4636,133 @@ h6 {
     bottom: 0;
   }
 }
+
+/* #Popup
+================================================== */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10000;
+  opacity: 0;
+  visibility: hidden;
+  display: none;
+  transition: all .5s ease;
+}
+
+.popup.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.popup-backdrop {
+  background-color: rgba(0,0,0,.69);
+  width: 100%;
+  height: 100%;
+}
+
+.popup-content {
+  border-radius: 1vw;
+  padding: 2vw 1.6vw;
+  width: 39%;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  transition: all 1s ease;
+}
+
+.popup-content h3 {
+  line-height: 1;
+  margin-bottom: 1.3vw;
+}
+
+.popup-content ul {
+  border-top: 1px solid rgba(14, 101, 243, 0.2);
+  border-bottom: 1px solid rgba(14, 101, 243, 0.2);
+  display: flex;
+  padding: .75vw 0;
+  margin: .5vw 0;
+}
+
+.popup-content ul > *:not(:last-child) {
+  margin-left: 1.8vw;
+}
+
+.popup-content p {
+  display: flex;
+}
+
+.popup-content p img {
+  flex: 0 0 1vw;
+  width: 1vw;
+  height: 1vw;
+  margin-left: .8vw;
+  object-fit: contain;
+  object-position: center;
+  margin-top: .2vw;
+}
+
+.popup-close {
+  width: 1.2vw;
+  position: absolute;
+  top: 1.1vw;
+  left: 1.1vw;
+}
+
+@media (max-width: 1023.98px) {
+  .popup-content {
+    padding: 0;
+    border-radius: 2.66vw;
+    padding: 6vw 4.6vw 8vw 4.6vw;
+    width: 90%;
+  }
+
+  .popup-content h3 {
+    margin-bottom: 4.66vw;
+  }
+
+  .popup-content ul {
+    border-top: none;
+    border-bottom: none;
+    display: block;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .popup-content ul > *:not(:last-child) {
+    margin-left: 0;
+  }
+
+  .popup-content p img {
+    flex: 0 0 4.66vw;
+    width: 4.66vw;
+    height: 4.66vw;
+    margin-left: 6vw;
+    margin-top: .2vw;
+  }
+
+  .popup-content p {
+    border-top: 1px solid rgba(14, 101, 243, 0.2);
+    padding: 5.33vw 0;
+  }
+
+  .popup-content > div > p:first-of-type {
+    border-top: none;
+    padding-top: 0;
+  }
+
+  .popup-content .btn {
+    margin-top: 6vw;
+  }
+
+  .popup-close {
+    width: 4vw;
+    top: 6vw;
+    left: 4.6vw;
+  }
+}
