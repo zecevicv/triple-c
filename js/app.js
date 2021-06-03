@@ -3,6 +3,7 @@
 const headerMenu = document.querySelector('.header-menu');
 const hamburgerBtn = document.querySelector('.header .hamburger');
 const body = document.querySelector('body');
+const header = document.querySelector('.header');
 
 if (hamburgerBtn) {
   hamburgerBtn.addEventListener('click', (e) => {
@@ -104,6 +105,43 @@ else {
       });
     });
   }
+}
+
+/* #Search Menu
+  ======================================================= */
+const searchToggler = document.querySelector('.header-search-toggler');
+const searchMenu = document.querySelector('.header-search-menu');
+
+if (searchToggler && searchMenu) {
+  searchToggler.addEventListener('click', (e) => {
+    header.classList.toggle('show-search');
+    body.classList.toggle('no-scroll');
+
+    if (header.classList.contains('show-search')) {
+      gsap.to(searchMenu, {
+        y: "100%",
+        duration: .6,
+        opacity: 1
+      })
+    } else {
+      gsap.to(searchMenu, {
+        y: 0,
+        duration: .6,
+        opacity: 0,
+      })
+    }
+
+    headerDropdownTogglers.forEach((toggler) => {
+      const li = toggler.closest('li');
+      const dropdown = li.querySelector('.header-dropdown');
+
+      li.classList.remove('show');
+      gsap.to(dropdown, {
+        y: 0,
+        opacity: 0
+      });
+    });
+  });
 }
 
 /* #Accordion
