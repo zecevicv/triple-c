@@ -4951,6 +4951,11 @@ h6 {
   width: 100%;
   z-index: 100;
   display: none;
+  transition: transform .4s ease;
+}
+
+.landing .sticky-btn.hide {
+  transform: translateY(100%);
 }
 
 .landing .sticky-btn .btn {

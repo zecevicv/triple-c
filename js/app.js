@@ -95,7 +95,7 @@ else {
       headerDropdownTogglers.forEach((toggler) => {
         const li = toggler.closest('li');
         const dropdown = li.querySelector('.header-dropdown');
-  
+
         li.classList.remove('show');
         gsap.to(dropdown, {
           y: 0,
@@ -211,7 +211,9 @@ const popupBackdrops = document.querySelectorAll('.popup-backdrop');
 
 if (popups && popupTogglers) {
   popups.forEach((popup) => {
-    gsap.set(popup, {display: 'block'});
+    gsap.set(popup, {
+      display: 'block'
+    });
   });
 
   popupTogglers.forEach((toggler) => {
@@ -257,12 +259,40 @@ if (popupBackdrops) {
 
 /* #Landing Page
   ======================================================= */
-  const landing = document.querySelector('.landing');
-  const landingContact = document.querySelector('.landing .contact');
-  const landingSticky = document.querySelector('.landing .sticky-btn');
+function isInViewport(el) {
 
-  if (landing && landingContact && landingSticky) {
-  }
+  const rect = el.getBoundingClientRect();
+
+  const windowHeight = (window.innerHeight || document.documentElement.clientHeight);
+  const windowWidth = (window.innerWidth || document.documentElement.clientWidth);
+
+  const vertInView = (rect.top <= windowHeight) && ((rect.top + rect.height) >= 0);
+  const horInView = (rect.left <= windowWidth) && ((rect.left + rect.width) >= 0);
+
+  return (vertInView && horInView);
+}
+
+const landing = document.querySelector('.landing');
+const landingForm = document.querySelector('.landing .contact .form');
+const landingSticky = document.querySelector('.landing .sticky-btn');
+
+if (landing && landingForm && landingSticky) {
+  // Sticky Btn Scroll To
+  landingSticky.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    landingForm.scrollIntoView({behavior: "smooth"});
+  })
+
+  // Hide Sticky Btn
+  window.addEventListener('scroll', (e) => {
+    if (isInViewport(landingForm)) {
+      landingSticky.classList.add('hide');
+    } else {
+      landingSticky.classList.remove('hide');
+    }
+  });
+}
 
 /* #Sliders
   ======================================================= */
