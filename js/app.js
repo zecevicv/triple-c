@@ -90,18 +90,20 @@ else {
     });
   });
 
-  headerBottom.addEventListener('mouseleave', (e) => {
-    headerDropdownTogglers.forEach((toggler) => {
-      const li = toggler.closest('li');
-      const dropdown = li.querySelector('.header-dropdown');
-
-      li.classList.remove('show');
-      gsap.to(dropdown, {
-        y: 0,
-        opacity: 0
+  if (headerBottom) {
+    headerBottom.addEventListener('mouseleave', (e) => {
+      headerDropdownTogglers.forEach((toggler) => {
+        const li = toggler.closest('li');
+        const dropdown = li.querySelector('.header-dropdown');
+  
+        li.classList.remove('show');
+        gsap.to(dropdown, {
+          y: 0,
+          opacity: 0
+        });
       });
     });
-  });
+  }
 }
 
 /* #Accordion
@@ -252,6 +254,15 @@ if (popupBackdrops) {
     })
   });
 }
+
+/* #Landing Page
+  ======================================================= */
+  const landing = document.querySelector('.landing');
+  const landingContact = document.querySelector('.landing .contact');
+  const landingSticky = document.querySelector('.landing .sticky-btn');
+
+  if (landing && landingContact && landingSticky) {
+  }
 
 /* #Sliders
   ======================================================= */
@@ -418,28 +429,30 @@ window.addEventListener('load', () => {
 
   /* #Products Slider
   ======================================================= */
-  new Swiper('.products-swiper', {
-    pagination: {
-      el: '.products-swiper .swiper-pagination',
-    },
-    effect: 'coverflow',
-    loop: true,
-    centeredSlides: true,
-    coverflowEffect: {
-      rotate: 0,
-      stretch: 60,
-      depth: 140,
-      slideShadows: false,
-    },
-    breakpoints: {
-      0: {
-        slidesPerView: 1,
-        effect: 'slide'
+  if (document.querySelector('.products-swiper .swiper-container')) {
+    new Swiper('.products-swiper', {
+      pagination: {
+        el: '.products-swiper .swiper-pagination',
       },
-      1024: {
-        slidesPerView: 4,
-        effect: 'coverflow'
+      effect: 'coverflow',
+      loop: true,
+      centeredSlides: true,
+      coverflowEffect: {
+        rotate: 0,
+        stretch: 60,
+        depth: 140,
+        slideShadows: false,
+      },
+      breakpoints: {
+        0: {
+          slidesPerView: 1,
+          effect: 'slide'
+        },
+        1024: {
+          slidesPerView: 4,
+          effect: 'coverflow'
+        }
       }
-    }
-  });
+    });
+  }
 });

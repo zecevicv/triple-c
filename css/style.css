@@ -132,6 +132,10 @@ button {
   margin-right: auto!important;
 }
 
+.p-0 {
+  padding: 0!important;
+}
+
 @media (max-width: 1023.98px) {
   .d-desktop {
     display: none;
@@ -4764,5 +4768,352 @@ h6 {
     width: 4vw;
     top: 6vw;
     left: 4.6vw;
+  }
+}
+
+/* #Landing Page
+================================================== */
+.landing {
+  overflow: hidden;
+  max-width: 100%;
+}
+
+/* Header */
+.landing-header {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+/* Bg */
+.landing .bg-img,
+.landing .bg-img img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  object-position: right center;
+}
+
+/* Text */
+
+/* Text (Packages) */
+.landing .text.packages {
+  position: absolute;
+  top: 50%;
+  right: 12.7vw;
+  z-index: 5;
+  transform: translateY(-50%);
+  width: 51%;
+  margin: 0;
+}
+
+.landing .text.packages .heading {
+  text-align: center;
+}
+
+/* Text (Info) */
+.landing .text.info {
+  position: absolute;
+  top: 50%;
+  right: 8.3vw;
+  width: 35.5vw;
+  z-index: 5;
+  color: white;
+  transform: translateY(-50%);
+}
+
+.landing .text.info h2 {
+  margin-bottom: 1.3vw;
+  line-height: 1;
+}
+
+.landing .text.info>p {
+  width: 30vw;
+  margin-bottom: 2.8vw;
+}
+
+.landing .text.info ul li {
+  display: flex;
+  margin-bottom: 2.35vw;
+}
+
+.landing .text.info ul li p {
+  max-width: 18vw;
+}
+
+.landing .text.info ul li p:first-child {
+  margin-bottom: 1vw;
+}
+
+.landing .text.info .svg-wrapper {
+  flex: 0 0 4.5vw;
+  padding-left: 1.6vw;
+}
+
+/* Contact */
+.landing .contact {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 24%;
+  height: 100%;
+  background-color: #F1F6F9;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, .2);
+  padding: 0 3vw;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.landing.alt .contact {
+  background-color: rgba(255, 255, 255, .77);
+}
+
+.landing .logo {
+  width: 13.3vw;
+  margin-bottom: 2.35vw;
+}
+
+.landing .form {
+  margin-top: 1vw;
+  width: 100%;
+}
+
+.landing input[type="text"] {
+  width: 100%;
+  font-size: 1.2vw;
+  border-radius: 500px;
+  border: 1px solid #00FFFF;
+  padding-right: 1.3vw;
+  height: 2.65vw;
+  margin-bottom: 1vw;
+}
+
+.landing.alt input[type="text"] {
+  border: 1px solid #0E65F3;
+}
+
+.landing .client {
+  text-align: right;
+  margin: 2vw 0 3.4vw 0;
+}
+
+.landing .client p {
+  margin-bottom: .5vw;
+  display: block;
+}
+
+.landing .btns {
+  display: flex;
+}
+
+.landing .btns .btn {
+  min-width: 0;
+  flex-grow: 1;
+}
+
+.landing .btns .btn:first-of-type {
+  margin-left: .25vw;
+}
+
+.landing button[type="submit"] {
+  width: 100%;
+}
+
+.landing:not(.alt) .btn-secondary {
+  color: #00FFFF;
+  border: 1px solid #00FFFF;
+  background-color: #00FFFF;
+}
+
+.landing:not(.alt) .btn-secondary:hover,
+.landing:not(.alt) .btn-secondary.active {
+  color: white;
+}
+
+.landing:not(.alt) .btn-secondary:hover svg,
+.landing:not(.alt) .btn-secondary:hover svg * {
+  stroke: white!important;
+  color: white;
+}
+
+/* Sticky Btn */
+.landing .sticky-btn {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  display: none;
+}
+
+.landing .sticky-btn .btn {
+  width: 100%;
+  border-radius: 0;
+  height: 14vw;
+  color: white!important;
+  background-color: #0E65F3!important;
+}
+
+.landing .sticky-btn .btn svg * {
+  color: white!important;
+  stroke: white!important;
+}
+
+.landing .sticky-btn .btn::before {
+  display: none;
+}
+
+@media (max-width: 1023.98px) {
+  .landing {
+    padding-top: 14.85vw;
+  }
+
+  .landing .bg-text-wrapper {
+    min-height: calc(100vh - 14vw);
+  }
+
+  .landing.alt .bg-text-wrapper {
+    background-color: black;
+  }
+
+  /* Header */
+  .landing-header {
+    display: block;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4vw 0;
+  }
+
+  .landing-header img {
+    width: 30vw;
+  }
+
+  /* Bg Img */
+  .landing .bg-img,
+  .landing .bg-img img {
+    width: 100%;
+    height: auto;
+  }
+
+  .landing .bg-img {
+    position: relative;
+  }
+
+  .landing .bg-img::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    background-image: linear-gradient(to top, white, transparent);
+  }
+
+  .landing.alt .bg-img::after {
+    background-image: linear-gradient(to top, black, transparent);
+  }
+
+  /* Text (Packages) */
+  .landing .text.packages {
+    position: static;
+    transform: none;
+    width: 100%;
+    margin: 0;
+    padding: 6vw 0 12vw 0;
+  }
+
+  .landing .text.packages .heading {
+    text-align: center;
+  }
+
+  /* Text (Info) */
+  .landing .text.info {
+    position: static;
+    width: 100%;
+    background-color: black;
+    transform: none;
+    padding: 12vw 5%;
+  }
+
+  .landing .text.info h2 {
+    width: 75%;
+    margin-bottom: 4.6vw;
+  }
+
+  .landing .text.info > p {
+    width: 100%;
+    margin-bottom: 9vw;
+  }
+
+  .landing .text.info ul li {
+    margin-bottom: 8vw;
+  }
+
+  .landing .text.info ul li:last-child {
+    margin-bottom: 10vw;
+  }
+
+  .landing .text.info ul li p {
+    max-width: 100%;
+  }
+
+  .landing .text.info ul li p:first-child {
+    margin-bottom: 1vw;
+  }
+
+  .landing .text.info .svg-wrapper {
+    flex: 0 0 12vw;
+    padding-left: 2.9vw;
+  }
+
+  /* Contact */
+  .landing .contact {
+    position: static;
+    width: 100%;
+    height: auto;
+    box-shadow: none;
+    padding: 11.3vw 5%;
+  }
+
+  .landing .logo {
+    width: 57vw;
+    margin-bottom: 10vw;
+  }
+
+  .landing .form {
+    margin-top: 4.66vw;
+  }
+
+  .landing input[type="text"] {
+    font-size: 5vw;
+    padding-right: 6vw;
+    height: 11.3vw;
+    margin-bottom: 4vw;
+  }
+
+  .landing .client {
+    margin: 8.6vw 0 15.3vw 0;
+  }
+  
+  .landing .client p {
+    margin-bottom: 1vw;
+  }
+
+  .landing .btns .btn:first-of-type {
+    margin-left: 1.5vw;
+  }
+
+  /* Sticky Btn */
+  .landing .sticky-btn {
+    display: block;
   }
 }
