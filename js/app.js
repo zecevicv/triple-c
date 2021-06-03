@@ -459,7 +459,7 @@ window.addEventListener('load', () => {
 
   /* #Products Slider
   ======================================================= */
-  if (document.querySelector('.products-swiper .swiper-container')) {
+  if (document.querySelector('.products .swiper-container')) {
     new Swiper('.products-swiper', {
       pagination: {
         el: '.products-swiper .swiper-pagination',
