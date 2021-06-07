@@ -508,7 +508,7 @@ window.addEventListener('load', () => {
       coverflowEffect: {
         rotate: 0,
         stretch: 60,
-        depth: 40,
+        depth: 250,
         slideShadows: false,
       },
       breakpoints: {
