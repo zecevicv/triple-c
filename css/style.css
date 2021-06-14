@@ -1266,6 +1266,7 @@ h6 {
   flex: 0 0 28%;
   border-top-left-radius: 100px;
   padding: 2vw 3.3vw 4vw 5vw;
+  min-height: 44.3vw;
 }
 
 .footer-logo {
@@ -1487,6 +1488,10 @@ h6 {
 .banner {
   position: relative;
   color: white;
+}
+
+.banner-slider .swiper-container {
+  cursor: grab;
 }
 
 .banner-slider .swiper-slide {
@@ -2890,6 +2895,7 @@ h6 {
   padding: 2.6vw 1.25vw 1.5vw 1.25vw;
   box-shadow: 0 2px 0.93vw rgba(0, 0, 0, 0.10);
   border: 1px solid transparent;
+  border-radius: 0.78vw;
 }
 
 .packages .swiper-slide.featured {
@@ -2897,7 +2903,6 @@ h6 {
 }
 
 .packages .swiper-slide.featured>div {
-  border-radius: 0.78vw;
   border: 1px solid #48D8CF;
   box-shadow: 0 6px 1.82vw rgba(0, 0, 0, 0.2);
 }
@@ -3027,6 +3032,7 @@ h6 {
     z-index: 10;
     height: auto;
     padding: 0 5%;
+    border-radius: 2vw;
   }
 
   .packages .swiper-slide>div {
@@ -3036,7 +3042,6 @@ h6 {
   }
 
   .packages .swiper-slide.featured {
-    border-radius: 2vw;
   }
 
   .packages .swiper-slide.featured::after {
@@ -3102,6 +3107,10 @@ h6 {
   overflow: hidden;
   text-align: center;
   padding: 2.8vw 0 5.7vw 0;
+}
+
+.products .swiper-wrapper {
+  cursor: grab;
 }
 
 /* Text */
@@ -4020,6 +4029,7 @@ h6 {
 
 .reviews .swiper-wrapper {
   padding: 2vw 0;
+  cursor: grab;
 }
 
 .reviews .swiper-slide {
