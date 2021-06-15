@@ -240,6 +240,40 @@ if (faqs) {
   }
 }
 
+/* #Tabs
+  ======================================================= */
+const tabs = document.querySelectorAll('.tabs');
+
+if (tabs) {
+  tabs.forEach((tab) => {
+    const tabBtns = tab.querySelectorAll('.tab-btn');
+    const tabPanels = tab.querySelectorAll('.tab-panel');
+
+    tabBtns.forEach((tabBtn) => {
+      tabBtn.addEventListener('click', (e) => {
+        const tabPanel = tab.querySelector(tabBtn.dataset.tab);
+
+        tabBtns.forEach((btn) => {
+          if (btn == tabBtn) {
+            btn.classList.add('active');
+          } else {
+            btn.classList.remove('active');
+          }
+        });
+
+        tabPanels.forEach((panel) => {
+          if (panel == tabPanel) {
+            panel.classList.add('active');
+          } else {
+            panel.classList.remove('active');
+          }
+        });
+        
+      });
+    });
+  }); 
+}
+
 /* #Popup
   ======================================================= */
 const popups = document.querySelectorAll('.popup');
