@@ -323,6 +323,7 @@ h6 {
   width: 100%;
   height: 100%;
   z-index: 1;
+  transform: translateX(0);
 }
 
 .btn-primary:hover {
@@ -330,7 +331,7 @@ h6 {
 }
 
 .btn-primary:hover::before {
-  transform: translate3d(0,-100%,0);
+  transform: translateX(-100%);
 }
 
 .btn-primary svg,
@@ -362,6 +363,7 @@ h6 {
   height: 100%;
   z-index: 1;
   overflow: hidden;
+  transform: translateX(0);
 }
 
 .btn-secondary:hover,
@@ -371,7 +373,7 @@ h6 {
 
 .btn-secondary:hover::before,
 .btn-secondary.active::before {
-  transform: translate3d(0,-100%,0);
+  transform: translateX(-100%);
 }
 
 .btn-secondary:hover svg,
