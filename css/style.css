@@ -1015,6 +1015,12 @@ h6 {
     background-color: white!important;
   }
 
+  .header-btn svg,
+  .header-btn svg * {
+    color: #0E65F3!important;
+    stroke: #0E65F3!important;
+  }
+
   .header-btn img {
     width: 4vw;
     margin-right: 6.66vw;
