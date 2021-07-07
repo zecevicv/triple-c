@@ -895,7 +895,7 @@ h6 {
     transform: none;
     box-shadow: none;
     height: 0;
-    opacity: 1;
+    opacity: 1!important;
   }
 
   .header-dropdown > div {
