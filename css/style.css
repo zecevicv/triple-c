@@ -324,6 +324,7 @@ h6 {
   height: 100%;
   z-index: 1;
   transform: translateY(0);
+  backface-visibility: hidden;
 }
 
 .btn-primary:hover {
@@ -364,6 +365,7 @@ h6 {
   z-index: 1;
   overflow: hidden;
   transform: translateY(0);
+  backface-visibility: hidden;
 }
 
 .btn-secondary:hover,
