@@ -1010,6 +1010,9 @@ h6 {
     align-items: center;
     height: 11.8vw;
     font-size: 5.6vw;
+    border: 1px solid #0E65F3!important;
+    color: #0E65F3!important;
+    background-color: white!important;
   }
 
   .header-btn img {
@@ -1019,7 +1022,7 @@ h6 {
   }
 
   .header-btn::before {
-    border-radius: 4px;
+    display: none;
   }
 
   .header-btn img,
