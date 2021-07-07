@@ -362,6 +362,8 @@ h6 {
   height: 100%;
   z-index: 1;
   overflow: hidden;
+  border-top-left-radius: 500px;
+  border-top-right-radius: 500px;
 }
 
 .btn-secondary:hover,
