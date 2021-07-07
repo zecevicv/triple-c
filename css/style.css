@@ -470,6 +470,38 @@ h6 {
     width: 2vw;
     margin-right: 2vw;
   }
+
+  .btn-primary {
+    background-color: #0E65F3!important;
+    color: white!important;
+    border: 1px solid #0E65F3!important;
+  }
+  
+  .btn-primary::before {
+    display: none;
+  }
+  
+  .btn-primary:hover svg,
+  .btn-primary:hover svg * {
+    stroke: white!important;
+    color: white;
+  }
+  
+  .btn-secondary {
+    color: #0E65F3!important;
+    border: 1px solid #0E65F3!important;
+    background-color: white!important;
+  }
+  
+  .btn-secondary::before {
+    display: none;
+  }
+  
+  .btn-secondary:hover svg,
+  .btn-secondary:hover svg * {
+    stroke: #0E65F3!important;
+    color: #0E65F3;
+  }
 }
 
 /* #Swiper Pagination
@@ -5358,6 +5390,18 @@ h6 {
   /* Sticky Btn */
   .landing .sticky-btn {
     display: block;
+  }
+
+  .landing:not(.alt) .btn-secondary {
+    color: #00FFFF!important;
+    border: 1px solid #00FFFF!important;
+    background-color: white!important;
+  }
+  
+  .landing:not(.alt) .btn-secondary svg,
+  .landing:not(.alt) .btn-secondary svg * {
+    stroke: #00FFFF!important;
+    color: #00FFFF;
   }
 }
 
