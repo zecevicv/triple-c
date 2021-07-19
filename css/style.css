@@ -3103,9 +3103,6 @@ h6 {
     justify-content: flex-end;
   }
 
-  .packages .swiper-slide.featured {
-  }
-
   .packages .swiper-slide.featured::after {
     filter: blur(5vw);
     top: 1%;
@@ -5770,5 +5767,128 @@ h6 {
 
   .two-sliders .row {
     display: block;
+  }
+}
+
+/* #Lobby
+================================================== */
+.lobby {
+  padding: 1vw 0 6vw 0;
+}
+
+.lobby .container {
+  width: 88%;
+}
+
+.lobby-breadcrumbs {
+  padding-right: 9.7vw;
+  margin-bottom: 3.65vw;
+}
+
+.lobby-posts > ul {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -2.35vw -1.5vw;
+}
+
+.lobby-post {
+  flex: 0 0 33.3%;
+  padding: 2.35vw 1.5vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.lobby-post .img {
+  margin-bottom: 1.3vw;
+}
+
+.lobby-post .img,
+.lobby-post .img img {
+  width: 100%;
+}
+
+.lobby-post .img img {
+  border-radius: 1vw;
+  box-shadow: 0 20px 20px #7682b742;
+}
+
+.lobby-post h2 {
+  color: #242F40;
+}
+
+.lobby-post .tags {
+  padding-top: 1vw;
+  margin-top: auto;
+}
+
+.lobby-post .tags ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  margin-top: .5vw;
+}
+
+.lobby-post .tags li {
+  border: 1px solid #0E65F3;
+  border-radius: 4px;
+  line-height: 1;
+  padding: 0.365vw 0.677vw;
+}
+
+.lobby-post .tags li:not(:last-child) {
+  margin-left: .7vw;
+  margin-bottom: .7vw;
+}
+
+@media (max-width: 1023.98px) {
+  .lobby {
+    padding: 7.33vw 0 21.3vw 0;
+  }
+  
+  .lobby .container {
+    width: 88%;
+  }
+  
+  .lobby-breadcrumbs {
+    padding-right: 0;
+    margin-bottom: 7.33vw;
+  }
+  
+  .lobby-posts > ul {
+    display: block;
+    margin: 0;
+  }
+  
+  .lobby-post {
+    padding: 0;
+  }
+
+  .lobby-post:not(:last-child) {
+    margin-bottom: 12vw;
+  }
+
+  .lobby-post .img {
+    margin-bottom: 4vw;
+  }
+  
+  .lobby-post .img img {
+    border-radius: 2.66vw;
+  }
+  
+  .lobby-post .tags {
+    padding-top: 4vw;
+  }
+  
+  .lobby-post .tags ul {
+    margin-top: 2.66vw;
+  }
+  
+  .lobby-post .tags li {
+    padding: 0.93vw 1.73vw;
+  }
+  
+  .lobby-post .tags li:not(:last-child) {
+    margin-left: 2vw;
+    margin-bottom: 2vw;
   }
 }
