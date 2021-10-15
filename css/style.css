@@ -4955,37 +4955,6 @@ h6 {
   transition: all 1s ease;
 }
 
-.popup-content h3 {
-  line-height: 1;
-  margin-bottom: 1.3vw;
-}
-
-.popup-content ul {
-  border-top: 1px solid rgba(14, 101, 243, 0.2);
-  border-bottom: 1px solid rgba(14, 101, 243, 0.2);
-  display: flex;
-  padding: .75vw 0;
-  margin: .5vw 0;
-}
-
-.popup-content ul > *:not(:last-child) {
-  margin-left: 1.8vw;
-}
-
-.popup-content p {
-  display: flex;
-}
-
-.popup-content p img {
-  flex: 0 0 1vw;
-  width: 1vw;
-  height: 1vw;
-  margin-left: .8vw;
-  object-fit: contain;
-  object-position: center;
-  margin-top: .2vw;
-}
-
 .popup-close {
   width: 1.2vw;
   position: absolute;
@@ -5001,11 +4970,52 @@ h6 {
     width: 90%;
   }
 
-  .popup-content h3 {
+  .popup-close {
+    width: 4vw;
+    top: 6vw;
+    left: 4.6vw;
+  }
+}
+
+/* #Popup 1
+================================================== */
+#popup-1 .popup-content h3 {
+  line-height: 1;
+  margin-bottom: 1.3vw;
+}
+
+#popup-1 .popup-content ul {
+  border-top: 1px solid rgba(14, 101, 243, 0.2);
+  border-bottom: 1px solid rgba(14, 101, 243, 0.2);
+  display: flex;
+  padding: .75vw 0;
+  margin: .5vw 0;
+}
+
+#popup-1 .popup-content ul > *:not(:last-child) {
+  margin-left: 1.8vw;
+}
+
+#popup-1 .popup-content p {
+  display: flex;
+}
+
+#popup-1 .popup-content p img {
+  flex: 0 0 1vw;
+  width: 1vw;
+  height: 1vw;
+  margin-left: .8vw;
+  object-fit: contain;
+  object-position: center;
+  margin-top: .2vw;
+}
+
+@media (max-width: 1023.98px) {
+  #popup-1 .popup-content h3 {
     margin-bottom: 4.66vw;
   }
 
-  .popup-content ul {
+  #popup-1 .popup-content ul {
     border-top: none;
     border-bottom: none;
     display: block;
@@ -5013,11 +5023,11 @@ h6 {
     margin: 0;
   }
   
-  .popup-content ul > *:not(:last-child) {
+  #popup-1 .popup-content ul > *:not(:last-child) {
     margin-left: 0;
   }
 
-  .popup-content p img {
+  #popup-1 .popup-content p img {
     flex: 0 0 4.66vw;
     width: 4.66vw;
     height: 4.66vw;
@@ -5025,24 +5035,129 @@ h6 {
     margin-top: .2vw;
   }
 
-  .popup-content p {
+  #popup-1 .popup-content p {
     border-top: 1px solid rgba(14, 101, 243, 0.2);
     padding: 5.33vw 0;
   }
 
-  .popup-content > div > p:first-of-type {
+  #popup-1 .popup-content > div > p:first-of-type {
     border-top: none;
     padding-top: 0;
   }
 
-  .popup-content .btn {
+  #popup-1 .popup-content .btn {
     margin-top: 6vw;
   }
+}
 
-  .popup-close {
-    width: 4vw;
-    top: 6vw;
-    left: 4.6vw;
+/* #Popup 2
+================================================== */
+#popup-2 .popup-backdrop {
+  background-color: rgba(255,255,255,.77);
+}
+
+#popup-2 .popup-content {
+  color: white;
+  background-color: #0E65F3;
+}
+
+#popup-2 h3 {
+  line-height: 1;
+}
+
+#popup-2 form {
+  margin: 1.3vw 0 2.6vw 0;
+  width: 100%;
+}
+
+#popup-2 input,
+#popup-2 input::placeholder,
+#popup-2 select,
+#popup-2 textarea,
+#popup-2 textarea::placeholder {
+  border: none;
+  width: 100%;
+  color: white;
+  background-color: transparent;
+  font-size: 1.04vw;
+  resize: none;
+}
+
+#popup-2 textarea {
+  border: 1px solid white;
+  padding: .5vw;
+}
+
+#popup-2 input,
+#popup-2 select,
+#popup-2 textarea {
+  border-bottom: 1px solid white;
+  padding-bottom: .5vw;
+}
+
+#popup-2 .row:not(:last-child) {
+  margin-bottom: 1.5vw;
+}
+
+#popup-2 .row {
+  display: flex;
+}
+
+#popup-2 .col {
+  flex-grow: 1;
+}
+
+#popup-2 .col:nth-child(2) {
+  margin: 0 1.3vw;
+}
+
+@media (max-width: 1023.98px) {
+  #popup-2 h3 {
+    margin: 0 auto;
+    text-align: center;
+    width: 80%;
+  }
+
+  #popup-2 h3 br {
+    display: none;
+  }
+  
+  #popup-2 form {
+    margin: 6vw 0 12vw 0;
+  }
+  
+  #popup-2 input,
+  #popup-2 input::placeholder,
+  #popup-2 select,
+  #popup-2 textarea,
+  #popup-2 textarea::placeholder {
+    font-size: 5.33vw;
+  }
+  
+  #popup-2 textarea {
+    padding: 2vw;
+  }
+  
+  #popup-2 input,
+  #popup-2 select,
+  #popup-2 textarea {
+    padding-bottom: 2vw;
+  }
+  
+  #popup-2 .row:not(:last-child) {
+    margin-bottom: 8vw;
+  }
+  
+  #popup-2 .row {
+    display: block;
+  }
+  
+  #popup-2 .col:not(:last-child) {
+    margin-bottom: 8vw!important;
+  }
+  
+  #popup-2 .col:nth-child(2) {
+    margin: 0;
   }
 }
 
